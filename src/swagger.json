@@ -20,10 +20,19 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "id": {
+                    "type": "string"
+                  },
                   "name": {
                     "type": "string"
                   },
-                  "description": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "updated_at": {
                     "type": "string"
                   }
                 },
@@ -41,6 +50,80 @@
           },
           "400": {
             "description": "Email já está sendo utilizado."
+          }
+        }
+      },
+      "get": { 
+        "tags": ["Users"],
+        "summary": "Retorna todos os usuários.",
+        "description": "List all users",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Users"],
+        "summary": "Retorna um usuário especifico.",
+        "description": "List all users",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso."
+          },
+          "400": {
+            "description": "Usuário não encontrado."
+          },
+          "content": {
+            "aplication/json": {
+
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Users"],
+        "summary": "Torna admin usuário.",
+        "description": "List all users",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
