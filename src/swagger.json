@@ -7,5 +7,43 @@
     "contact": {
       "email": "rakelmoreiramendonca@gmail.com"
     }
+  },
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Cria um usuario",
+        "description": "Cria um novo usuario",
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "RakelMoreira",
+                  "email": "rakelmoreiramendonca@gmail.com"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Operação realizada com sucesso."
+          },
+          "400": {
+            "description": "Email já está sendo utilizado."
+          }
+        }
+      }
+    }
   }
 }
